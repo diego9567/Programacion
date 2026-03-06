@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Deberes</title>
+
+<style>
+
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>DEBERES SENTENCIA IF</h2>
+
+<p>
+Este ejercicio trata sobre el uso de condicionales (if) en Python para tomar decisiones según los datos que ingresa el usuario.
+En el primer caso, el programa solicita un número y verifica si es mayor que 50 para mostrar un mensaje correspondiente.
+En el segundo caso, el programa pide la edad de una persona y determina si puede votar, considerando que solo pueden hacerlo
+las personas que tienen 18 años o más.
+</p>
+
+<h3>Código Ejercicio 1</h3>
+
+<pre>
+numero = int(input("Ingrese un número: "))
+
+if numero > 50:
+    print("El número es mayor que 50")
+else:
+    print("El número no es mayor que 50")
+</pre>
+
+<h3>Código Ejercicio 2</h3>
+
+<pre>
+nombre = input("Ingrese su nombre: ")
+edad = int(input("Ingrese su edad: "))
+
+if edad >= 18:
+    print(nombre, "puede votar")
+else:
+    print(nombre, "no puede votar")
+</pre>
+
+<h3>Video del ejercicio</h3>
+
+<iframe 
+width="640" 
+height="360" 
+src="https://drive.google.com/file/d/1SUb5cPfrFbOlFANu8kq1fgAvw9s6MJPJ/preview"
+allow="autoplay">
+</iframe>
+
+</div>
+
+</body>
+</html>
