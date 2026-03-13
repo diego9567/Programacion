@@ -46,6 +46,8 @@ pre{
 
 <h2>DEBER - TKINTER</h2>
 
+<h3>Ejercicio 1</h3>
+
 <p>
 Este programa está hecho en Python utilizando la librería Tkinter, que permite crear interfaces gráficas.
 El programa abre una ventana donde el usuario puede ingresar su nombre y su edad en dos cajas de texto.
@@ -81,6 +83,89 @@ caja_edad.pack()
 
 button = tk.Button(ventana, text="Saludar", command=saludar)
 button.pack()
+
+ventana.mainloop()
+</pre>
+
+
+<h3>Ejercicio 2</h3>
+
+<p>
+Este programa está desarrollado en Python utilizando la librería Tkinter para crear una interfaz gráfica.
+El programa muestra una ventana que funciona como una calculadora básica, donde el usuario puede ingresar
+dos números en cajas de texto. Luego, mediante cuatro botones (Sumar, Restar, Multiplicar y Dividir),
+el programa realiza la operación seleccionada. El resultado se muestra en la misma ventana mediante un Label.
+</p>
+
+<h3>Código Ejercicio 2</h3>
+
+<pre>
+import tkinter as tk
+
+def sumar():
+    num1 = caja1.get()
+    num2 = caja2.get()
+    resultado = int(num1) + int(num2)
+    resultado_label.config(text="Resultado: " + str(resultado))
+
+def restar():
+    num1 = caja1.get()
+    num2 = caja2.get()
+    resultado = int(num1) - int(num2)
+    resultado_label.config(text="Resultado: " + str(resultado))
+
+def multiplicar():
+    num1 = caja1.get()
+    num2 = caja2.get()
+    resultado = int(num1) * int(num2)
+    resultado_label.config(text="Resultado: " + str(resultado))
+
+def dividir():
+    num1 = caja1.get()
+    num2 = caja2.get()
+    resultado = int(num1) / int(num2)
+    resultado_label.config(text="Resultado: " + str(round(resultado, 2)))
+
+ventana = tk.Tk()
+ventana.geometry("200x300")
+ventana.title("Calculadora")
+
+frame = tk.Frame(ventana, bg="blue")
+frame.pack(fill="both", expand=True)
+
+texto1 = tk.Label(frame, text="Ingrese un numero", bg="red",
+font=("Arial",12,"bold"), fg="black")
+texto1.pack()
+
+caja1 = tk.Entry(frame)
+caja1.pack()
+
+texto2 = tk.Label(frame, text="Ingrese otro numero", bg="red",
+font=("Arial",12,"bold"), fg="black")
+texto2.pack()
+
+caja2 = tk.Entry(frame)
+caja2.pack()
+
+boton1 = tk.Button(frame, text="Sumar", bg="red",
+font=("Arial",10,"bold"), command=sumar)
+boton1.pack()
+
+boton2 = tk.Button(frame, text="Restar", bg="red",
+font=("Arial",10,"bold"), command=restar)
+boton2.pack()
+
+boton3 = tk.Button(frame, text="Multiplicar", bg="red",
+font=("Arial",10,"bold"), command=multiplicar)
+boton3.pack()
+
+boton4 = tk.Button(frame, text="Dividir", bg="red",
+font=("Arial",10,"bold"), command=dividir)
+boton4.pack()
+
+resultado_label = tk.Label(frame, text="", bg="orange",
+font=("Arial",10,"bold"), fg="black")
+resultado_label.pack()
 
 ventana.mainloop()
 </pre>
