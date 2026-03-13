@@ -3,17 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <title>Bucles</title>
+
+<style>
+
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>Deber - Bucles</h1>
+<div class="caja">
+
+<h1>Deber - Calculadora Básica Python</h1>
 
 <p>
-Aquí se muestran ejercicios utilizando bucles en Python.
+Este programa es una calculadora básica realizada en Python. 
+Permite al usuario elegir una operación matemática desde un menú: suma, resta, multiplicación o división.
+El programa solicita dos números al usuario y, dependiendo de la opción seleccionada, realiza la operación correspondiente mediante funciones y muestra el resultado en pantalla.
 </p>
 
+<h3>Código Ejercicio 1</h3>
+
+<pre>
+def menu():
+    print("Calculadora basica")
+    print("1..para sumar")
+    print("2..para restar")
+    print("3..para multiplicar")
+    print("4..para dividir")
+
+    opcion = pedirNumero("Ingrese una opcion: ")
+
+    if opcion == 1:
+        num1 = pedirNumero("Ingrese el primer numero: ")
+        num2 = pedirNumero("Ingrese el segundo numero: ")
+        sumar(num1, num2)
+
+    elif opcion == 2:
+        num1 = pedirNumero("Ingrese el primer numero: ")
+        num2 = pedirNumero("Ingrese el segundo numero: ")
+        restar(num1, num2)
+
+    elif opcion == 3:
+        num1 = pedirNumero("Ingrese el primer numero: ")
+        num2 = pedirNumero("Ingrese el segundo numero: ")
+        multiplicar(num1, num2)
+
+    elif opcion == 4:
+        num1 = pedirNumero("Ingrese el primer numero: ")
+        num2 = pedirNumero("Ingrese el segundo numero: ")
+        dividir(num1, num2)
+
+    else:
+        print("Opcion no valida")
+
+
+def pedirNumero(mensaje):
+    return int(input(mensaje))
+
+
+def sumar(num1, num2):
+    print("La suma es", num1 + num2)
+
+
+def restar(num1, num2):
+    print("La resta es", num1 - num2)
+
+
+def multiplicar(num1, num2):
+    print("La multiplicacion es", num1 * num2)
+
+
+def dividir(num1, num2):
+    print("La division es", num1 / num2)
+
+
+menu()
+</pre>
+
+<br>
+
 <a href="index.html">Volver al menú</a>
+
+</div>
 
 </body>
 </html>
