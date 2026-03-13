@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tkinter</title>
+
+<style>
+
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e3c72;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>DEBER - TKINTER</h2>
+
+<p>
+Este programa está hecho en Python utilizando la librería Tkinter, que permite crear interfaces gráficas.
+El programa abre una ventana donde el usuario puede ingresar su nombre y su edad en dos cajas de texto.
+Luego, al presionar el botón “Saludar”, se ejecuta una función que obtiene los datos escritos por el usuario
+y muestra en la terminal un mensaje con el saludo, indicando el nombre y la edad ingresados.
+</p>
+
+<h3>Código Ejercicio 1</h3>
+
+<pre>
+import tkinter as tk
+
+def saludar():
+    nombre = caja_nombre.get()
+    edad = caja_edad.get()
+    print("Hola " + nombre + " tienes " + edad + " años")
+
+ventana = tk.Tk()
+ventana.geometry("250x200")
+ventana.title("Saludo")
+
+texto1 = tk.Label(ventana, text="Ingrese su nombre")
+texto1.pack()
+
+caja_nombre = tk.Entry(ventana)
+caja_nombre.pack()
+
+texto2 = tk.Label(ventana, text="Ingrese su edad")
+texto2.pack()
+
+caja_edad = tk.Entry(ventana)
+caja_edad.pack()
+
+button = tk.Button(ventana, text="Saludar", command=saludar)
+button.pack()
+
+ventana.mainloop()
+</pre>
+
+<br>
+
+<a href="index.html" class="boton">Volver al menú</a>
+
+</div>
+
+</body>
+</html>
