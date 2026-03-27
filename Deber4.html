@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Menú de Opciones</title>
+
+<style>
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e3c72;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>DEBER - MENÚ DE OPCIONES (CALCULADORA)</h2>
+
+<p>
+Este programa en Python implementa una calculadora básica utilizando un menú de opciones.
+El usuario puede elegir entre sumar, restar, multiplicar o dividir. 
+El programa solicita dos números y realiza la operación seleccionada mediante funciones.
+</p>
+
+<h3>Código del programa</h3>
+
+<pre>
+def menu():
+    print("Calculadora básica")
+    print("1. Sumar")
+    print("2. Restar")
+    print("3. Multiplicar")
+    print("4. Dividir")
+
+    opcion = pedirNumero("Ingrese una opción: ")
+
+    if opcion == 1:
+        num1 = pedirNumero("Ingrese el primer número: ")
+        num2 = pedirNumero("Ingrese el segundo número: ")
+        sumar(num1, num2)
+
+    elif opcion == 2:
+        num1 = pedirNumero("Ingrese el primer número: ")
+        num2 = pedirNumero("Ingrese el segundo número: ")
+        restar(num1, num2)
+
+    elif opcion == 3:
+        num1 = pedirNumero("Ingrese el primer número: ")
+        num2 = pedirNumero("Ingrese el segundo número: ")
+        multiplicar(num1, num2)
+
+    elif opcion == 4:
+        num1 = pedirNumero("Ingrese el primer número: ")
+        num2 = pedirNumero("Ingrese el segundo número: ")
+        dividir(num1, num2)
+
+    else:
+        print("Opción no válida")
+
+
+def pedirNumero(mensaje):
+    return int(input(mensaje))
+
+
+def sumar(num1, num2):
+    print("La suma es:", num1 + num2)
+
+
+def restar(num1, num2):
+    print("La resta es:", num1 - num2)
+
+
+def multiplicar(num1, num2):
+    print("La multiplicación es:", num1 * num2)
+
+
+def dividir(num1, num2):
+    if num2 != 0:
+        print("La división es:", num1 / num2)
+    else:
+        print("No se puede dividir para cero")
+
+
+menu()
+</pre>
+
+<h3>Video del ejercicio</h3>
+
+<iframe 
+width="640" 
+height="360" 
+src="https://drive.google.com/file/d/1Yjvj8yCcWPICmwUjHNpb1GnNK3YcJjH0/preview"
+allow="autoplay">
+</iframe>
+
+<br>
+
+<a href="index.html" class="boton">Volver al menú</a>
+
+</div>
+
+</body>
+</html>
