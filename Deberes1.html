@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Deberes</title>
+<title>Sentencia IF</title>
 
 <style>
-
 body{
     background-color:#1e3c72;
     color:white;
@@ -35,26 +34,21 @@ pre{
     text-decoration:none;
     border-radius:5px;
 }
-
 </style>
-
 </head>
 
 <body>
 
 <div class="caja">
 
-<h2>DEBERES SENTENCIA IF</h2>
+<h2>DEBER - SENTENCIA IF</h2>
 
 <p>
-Este ejercicio trata sobre el uso de condicionales (if) en Python para tomar decisiones según los datos que ingresa el usuario.
-En el primer caso, el programa solicita un número y verifica si es mayor que 50 para mostrar un mensaje correspondiente.
-En el segundo caso, el programa pide la edad de una persona y determina si puede votar, considerando que solo pueden hacerlo
-las personas que tienen 18 años o más.
+Este conjunto de ejercicios utiliza estructuras condicionales (if) en Python para tomar decisiones
+según los datos ingresados por el usuario.
 </p>
 
-<h3>Código Ejercicio 1</h3>
-
+<h3>Ejercicio 1 - Número mayor que 50</h3>
 <pre>
 numero = int(input("Ingrese un número: "))
 
@@ -64,19 +58,102 @@ else:
     print("El número no es mayor que 50")
 </pre>
 
-<h3>Código Ejercicio 2</h3>
-
+<h3>Ejercicio 2 - Puede votar</h3>
 <pre>
-nombre = input("Ingrese su nombre: ")
 edad = int(input("Ingrese su edad: "))
 
 if edad >= 18:
-    print(nombre, "puede votar")
+    print("Puede votar")
 else:
-    print(nombre, "no puede votar")
+    print("No puede votar")
 </pre>
 
-<h3>Video del ejercicio</h3>
+<h3>Ejercicio 3 - Múltiplo de 3</h3>
+<pre>
+numero = int(input("Ingrese un número: "))
+
+if numero % 3 == 0:
+    print("Es múltiplo de 3")
+else:
+    print("No es múltiplo de 3")
+</pre>
+
+<h3>Ejercicio 4 - Contraseña</h3>
+<pre>
+clave = input("Ingrese la contraseña: ")
+
+if clave == "python123":
+    print("Contraseña correcta")
+else:
+    print("Contraseña incorrecta")
+</pre>
+
+<h3>Ejercicio 5 - Aprobado o reprobado</h3>
+<pre>
+nota = float(input("Ingrese la nota (0-10): "))
+
+if nota >= 7:
+    print("Aprobado")
+else:
+    print("Reprobado")
+</pre>
+
+<h3>Ejercicio 6 - Número mayor entre dos</h3>
+<pre>
+num1 = int(input("Ingrese el primer número: "))
+num2 = int(input("Ingrese el segundo número: "))
+
+if num1 > num2:
+    print("El mayor es:", num1)
+elif num2 > num1:
+    print("El mayor es:", num2)
+else:
+    print("Ambos números son iguales")
+</pre>
+
+<h3>Ejercicio 7 - Tipo de número</h3>
+<pre>
+numero = int(input("Ingrese un número: "))
+
+if numero > 0:
+    print("Es positivo")
+elif numero < 0:
+    print("Es negativo")
+else:
+    print("Es cero")
+</pre>
+
+<h3>Ejercicio 8 - Vocal o no</h3>
+<pre>
+letra = input("Ingrese una letra: ")
+
+if letra.lower() in "aeiou":
+    print("Es una vocal")
+else:
+    print("No es una vocal")
+</pre>
+
+<h3>Ejercicio 9 - Temperatura</h3>
+<pre>
+temperatura = float(input("Ingrese la temperatura en °C: "))
+
+if temperatura < 15:
+    print("Hace frío")
+else:
+    print("No hace frío")
+</pre>
+
+<h3>Ejercicio 10 - Año bisiesto</h3>
+<pre>
+anio = int(input("Ingrese un año: "))
+
+if (anio % 4 == 0 and anio % 100 != 0) or (anio % 400 == 0):
+    print("Es un año bisiesto")
+else:
+    print("No es un año bisiesto")
+</pre>
+
+<h3>Video del ejercicio 1,2</h3>
 
 <iframe 
 width="640" 
@@ -85,7 +162,7 @@ src="https://drive.google.com/file/d/1SUb5cPfrFbOlFANu8kq1fgAvw9s6MJPJ/preview"
 allow="autoplay">
 </iframe>
 
-<br><br>
+<br>
 
 <a href="index.html" class="boton">Volver al menú</a>
 

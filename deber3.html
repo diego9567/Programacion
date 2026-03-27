@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Tkinter</title>
+<title>Funciones</title>
 
 <style>
-
 body{
     background-color:#1e3c72;
     color:white;
@@ -35,140 +34,97 @@ pre{
     text-decoration:none;
     border-radius:5px;
 }
-
 </style>
-
 </head>
 
 <body>
 
 <div class="caja">
 
-<h2>DEBER - TKINTER</h2>
-
-<h3>Ejercicio 1</h3>
+<h2>DEBER - FUNCIONES EN PYTHON</h2>
 
 <p>
-Este programa está hecho en Python utilizando la librería Tkinter, que permite crear interfaces gráficas.
-El programa abre una ventana donde el usuario puede ingresar su nombre y su edad en dos cajas de texto.
-Luego, al presionar el botón “Saludar”, se ejecuta una función que obtiene los datos escritos por el usuario
-y muestra en la terminal un mensaje con el saludo, indicando el nombre y la edad ingresados.
+Estos ejercicios utilizan funciones en Python para organizar el código, reutilizar lógica
+y devolver resultados mediante el uso de parámetros y valores de retorno.
 </p>
 
-<h3>Código Ejercicio 1</h3>
-
+<h3>Ejercicio 1 - Mensaje de bienvenida</h3>
 <pre>
-import tkinter as tk
-
-def saludar():
-    nombre = caja_nombre.get()
-    edad = caja_edad.get()
-    print("Hola " + nombre + " tienes " + edad + " años")
-
-ventana = tk.Tk()
-ventana.geometry("250x200")
-ventana.title("Saludo")
-
-texto1 = tk.Label(ventana, text="Ingrese su nombre")
-texto1.pack()
-
-caja_nombre = tk.Entry(ventana)
-caja_nombre.pack()
-
-texto2 = tk.Label(ventana, text="Ingrese su edad")
-texto2.pack()
-
-caja_edad = tk.Entry(ventana)
-caja_edad.pack()
-
-button = tk.Button(ventana, text="Saludar", command=saludar)
-button.pack()
-
-ventana.mainloop()
+def mostrar_bienvenida(nombre):
+    print("Bienvenido,", nombre)
 </pre>
 
-
-<h3>Ejercicio 2</h3>
-
-<p>
-Este programa está desarrollado en Python utilizando la librería Tkinter para crear una interfaz gráfica.
-El programa muestra una ventana que funciona como una calculadora básica, donde el usuario puede ingresar
-dos números en cajas de texto. Luego, mediante cuatro botones (Sumar, Restar, Multiplicar y Dividir),
-el programa realiza la operación seleccionada. El resultado se muestra en la misma ventana mediante un Label.
-</p>
-
-<h3>Código Ejercicio 2</h3>
-
+<h3>Ejercicio 2 - Par o impar</h3>
 <pre>
-import tkinter as tk
-
-def sumar():
-    num1 = caja1.get()
-    num2 = caja2.get()
-    resultado = int(num1) + int(num2)
-    resultado_label.config(text="Resultado: " + str(resultado))
-
-def restar():
-    num1 = caja1.get()
-    num2 = caja2.get()
-    resultado = int(num1) - int(num2)
-    resultado_label.config(text="Resultado: " + str(resultado))
-
-def multiplicar():
-    num1 = caja1.get()
-    num2 = caja2.get()
-    resultado = int(num1) * int(num2)
-    resultado_label.config(text="Resultado: " + str(resultado))
-
-def dividir():
-    num1 = caja1.get()
-    num2 = caja2.get()
-    resultado = int(num1) / int(num2)
-    resultado_label.config(text="Resultado: " + str(round(resultado, 2)))
-
-ventana = tk.Tk()
-ventana.geometry("200x300")
-ventana.title("Calculadora")
-
-frame = tk.Frame(ventana, bg="blue")
-frame.pack(fill="both", expand=True)
-
-texto1 = tk.Label(frame, text="Ingrese un numero", bg="red",
-font=("Arial",12,"bold"), fg="black")
-texto1.pack()
-
-caja1 = tk.Entry(frame)
-caja1.pack()
-
-texto2 = tk.Label(frame, text="Ingrese otro numero", bg="red",
-font=("Arial",12,"bold"), fg="black")
-texto2.pack()
-
-caja2 = tk.Entry(frame)
-caja2.pack()
-
-boton1 = tk.Button(frame, text="Sumar", bg="red",
-font=("Arial",10,"bold"), command=sumar)
-boton1.pack()
-
-boton2 = tk.Button(frame, text="Restar", bg="red",
-font=("Arial",10,"bold"), command=restar)
-boton2.pack()
-
-boton3 = tk.Button(frame, text="Multiplicar", bg="red",
-font=("Arial",10,"bold"), command=multiplicar)
-boton3.pack()
-
-boton4 = tk.Button(frame, text="Dividir", bg="red",
-font=("Arial",10,"bold"), command=dividir)
-boton4.pack()
-
-resultado_label = tk.Label(frame, text="", bg="orange",
-font=("Arial",10,"bold"), fg="black")
-resultado_label.pack()
-
-ventana.mainloop()
+def es_par(numero):
+    if numero % 2 == 0:
+        return "Par"
+    else:
+        return "Impar"
 </pre>
+
+<h3>Ejercicio 3 - Suma de dos números</h3>
+<pre>
+def sumar(num1, num2):
+    return num1 + num2
+</pre>
+
+<h3>Ejercicio 4 - Longitud de una palabra</h3>
+<pre>
+def longitud_palabra(palabra):
+    return len(palabra)
+</pre>
+
+<h3>Ejercicio 5 - Cuadrado de un número</h3>
+<pre>
+def cuadrado(numero):
+    return numero ** 2
+</pre>
+
+<h3>Ejercicio 6 - Mayor de tres números</h3>
+<pre>
+def mayor_de_tres(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+</pre>
+
+<h3>Ejercicio 7 - Celsius a Fahrenheit</h3>
+<pre>
+def celsius_a_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+</pre>
+
+<h3>Ejercicio 8 - Suma de una lista</h3>
+<pre>
+def suma_lista(lista):
+    suma = 0
+    for numero in lista:
+        suma += numero
+    return suma
+</pre>
+
+<h3>Ejercicio 9 - Número positivo</h3>
+<pre>
+def es_positivo(numero):
+    if numero > 0:
+        return True
+    else:
+        return False
+</pre>
+
+<h3>Ejercicio 10 - Invertir palabra</h3>
+<pre>
+def invertir_palabra(palabra):
+    return palabra[::-1]
+</pre>
+
+<h3>Video del ejercicio</h3>
+
+<!-- AQUÍ PEGAS TU VIDEO DE DRIVE -->
 
 <br>
 

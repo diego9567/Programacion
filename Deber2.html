@@ -5,7 +5,6 @@
 <title>Bucles</title>
 
 <style>
-
 body{
     background-color:#1e3c72;
     color:white;
@@ -35,90 +34,113 @@ pre{
     text-decoration:none;
     border-radius:5px;
 }
-
 </style>
-
 </head>
 
 <body>
 
 <div class="caja">
 
-<h1>Deber - Calculadora Básica Python</h1>
+<h2>DEBER - BUCLES</h2>
 
 <p>
-Este programa es una calculadora básica realizada en Python. 
-Permite al usuario elegir una operación matemática desde un menú: suma, resta, multiplicación o división.
-El programa solicita dos números al usuario y, dependiendo de la opción seleccionada, realiza la operación correspondiente mediante funciones y muestra el resultado en pantalla.
+Estos ejercicios utilizan estructuras repetitivas (for y while) en Python para repetir acciones
+y trabajar con secuencias de datos.
 </p>
 
-<h3>Código Ejercicio 1</h3>
-
+<h3>Ejercicio 1 - Números del 1 al 10</h3>
 <pre>
-def menu():
-    print("Calculadora basica")
-    print("1..para sumar")
-    print("2..para restar")
-    print("3..para multiplicar")
-    print("4..para dividir")
+for i in range(1, 11):
+    print(i)
+</pre>
 
-    opcion = pedirNumero("Ingrese una opcion: ")
+<h3>Ejercicio 2 - Números pares del 1 al 20</h3>
+<pre>
+for i in range(1, 21):
+    if i % 2 == 0:
+        print(i)
+</pre>
 
-    if opcion == 1:
-        num1 = pedirNumero("Ingrese el primer numero: ")
-        num2 = pedirNumero("Ingrese el segundo numero: ")
-        sumar(num1, num2)
+<h3>Ejercicio 3 - Tabla de multiplicar</h3>
+<pre>
+numero = int(input("Ingrese un número: "))
 
-    elif opcion == 2:
-        num1 = pedirNumero("Ingrese el primer numero: ")
-        num2 = pedirNumero("Ingrese el segundo numero: ")
-        restar(num1, num2)
+for i in range(1, 11):
+    print(numero, "x", i, "=", numero * i)
+</pre>
 
-    elif opcion == 3:
-        num1 = pedirNumero("Ingrese el primer numero: ")
-        num2 = pedirNumero("Ingrese el segundo numero: ")
-        multiplicar(num1, num2)
+<h3>Ejercicio 4 - Números del 10 al 1</h3>
+<pre>
+for i in range(10, 0, -1):
+    print(i)
+</pre>
 
-    elif opcion == 4:
-        num1 = pedirNumero("Ingrese el primer numero: ")
-        num2 = pedirNumero("Ingrese el segundo numero: ")
-        dividir(num1, num2)
+<h3>Ejercicio 5 - Suma acumulada</h3>
+<pre>
+numero = int(input("Ingrese un número: "))
+suma = 0
 
-    else:
-        print("Opcion no valida")
+for i in range(1, numero + 1):
+    suma += i
 
+print("La suma es:", suma)
+</pre>
 
-def pedirNumero(mensaje):
-    return int(input(mensaje))
+<h3>Ejercicio 6 - Contar vocales</h3>
+<pre>
+palabra = input("Ingrese una palabra: ")
+contador = 0
 
+for letra in palabra:
+    if letra.lower() in "aeiou":
+        contador += 1
 
-def sumar(num1, num2):
-    print("La suma es", num1 + num2)
+print("Cantidad de vocales:", contador)
+</pre>
 
+<h3>Ejercicio 7 - Contraseña correcta</h3>
+<pre>
+clave_correcta = "python123"
+clave = input("Ingrese la contraseña: ")
 
-def restar(num1, num2):
-    print("La resta es", num1 - num2)
+while clave != clave_correcta:
+    print("Contraseña incorrecta")
+    clave = input("Intente nuevamente: ")
 
+print("Acceso permitido")
+</pre>
 
-def multiplicar(num1, num2):
-    print("La multiplicacion es", num1 * num2)
+<h3>Ejercicio 8 - Múltiplos de 5</h3>
+<pre>
+for i in range(1, 51):
+    if i % 5 == 0:
+        print(i)
+</pre>
 
+<h3>Ejercicio 9 - Mayor de 5 números</h3>
+<pre>
+mayor = -999999
 
-def dividir(num1, num2):
-    print("La division es", num1 / num2)
+for i in range(5):
+    numero = int(input("Ingrese un número: "))
+    
+    if numero > mayor:
+        mayor = numero
 
+print("El número mayor es:", mayor)
+</pre>
 
-menu()
+<h3>Ejercicio 10 - Triángulo de asteriscos</h3>
+<pre>
+filas = 5
+
+for i in range(1, filas + 1):
+    print("*" * i)
 </pre>
 
 <h3>Video del ejercicio</h3>
 
-<iframe 
-width="640" 
-height="360" 
-src="https://drive.google.com/file/d/1Yjvj8yCcWPICmwUjHNpb1GnNK3YcJjH0/preview"
-allow="autoplay">
-</iframe>
+<!-- AQUÍ PEGAS TU VIDEO DE DRIVE -->
 
 <br>
 
