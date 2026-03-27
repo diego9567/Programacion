@@ -52,74 +52,80 @@ y devolver resultados mediante el uso de parámetros y valores de retorno.
 <pre>
 def mostrar_bienvenida(nombre):
     print("Bienvenido,", nombre)
+
+mostrar_bienvenida("Mateo")
 </pre>
 
 <h3>Ejercicio 2 - Par o impar</h3>
 <pre>
 def es_par(numero):
-    if numero % 2 == 0:
-        return "Par"
-    else:
-        return "Impar"
+    return "Par" if numero % 2 == 0 else "Impar"
+
+print(es_par(10))
 </pre>
 
 <h3>Ejercicio 3 - Suma de dos números</h3>
 <pre>
 def sumar(num1, num2):
     return num1 + num2
+
+print(sumar(5, 7))
 </pre>
 
 <h3>Ejercicio 4 - Longitud de una palabra</h3>
 <pre>
 def longitud_palabra(palabra):
     return len(palabra)
+
+print(longitud_palabra("Python"))
 </pre>
 
 <h3>Ejercicio 5 - Cuadrado de un número</h3>
 <pre>
 def cuadrado(numero):
     return numero ** 2
+
+print(cuadrado(4))
 </pre>
 
 <h3>Ejercicio 6 - Mayor de tres números</h3>
 <pre>
 def mayor_de_tres(a, b, c):
-    if a >= b and a >= c:
-        return a
-    elif b >= a and b >= c:
-        return b
-    else:
-        return c
+    return max(a, b, c)
+
+print(mayor_de_tres(10, 5, 20))
 </pre>
 
 <h3>Ejercicio 7 - Celsius a Fahrenheit</h3>
 <pre>
-def celsius_a_fahrenheit(celsius):
-    return (celsius * 9/5) + 32
+def celsius_a_fahrenheit(c):
+    return (c * 1.8) + 32
+
+print(celsius_a_fahrenheit(30))
 </pre>
 
 <h3>Ejercicio 8 - Suma de una lista</h3>
 <pre>
 def suma_lista(lista):
-    suma = 0
-    for numero in lista:
-        suma += numero
-    return suma
+    return sum(lista)
+
+print(suma_lista([1, 2, 3, 4, 5]))
 </pre>
 
 <h3>Ejercicio 9 - Número positivo</h3>
 <pre>
-def es_positivo(numero):
-    if numero > 0:
-        return True
-    else:
-        return False
+def es_positivo(n):
+    return n > 0
+
+print(es_positivo(8))
 </pre>
 
 <h3>Ejercicio 10 - Invertir palabra</h3>
 <pre>
-def invertir_palabra(palabra):
-    return palabra[::-1]
+def invertir_palabra(p):
+    return p[::-1]
+
+print(invertir_palabra("Hola"))
 </pre>
 
 <h3>Video del ejercicio</h3>
