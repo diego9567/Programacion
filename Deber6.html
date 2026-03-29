@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Notas</title>
+
+<style>
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e3c72;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>DEBER - TKINTER (NOTAS)</h2>
+
+<p>
+Este programa está desarrollado en Python utilizando la librería Tkinter para crear una interfaz gráfica.
+Permite ingresar varias notas, almacenarlas en una lista y calcular el promedio.
+El programa indica si el estudiante aprueba o reprueba según el promedio obtenido.
+</p>
+
+<h3>Código del programa</h3>
+
+<pre>
+import tkinter as tk
+
+notas = []
+
+def agregar_nota():
+    try:
+        nota = float(entry.get())
+        notas.append(nota)
+        lista_label.config(text=f"Notas: {notas}")
+        entry.delete(0, "end")   
+    except:
+        resultado.config(text="Ingrese un número válido")
+
+def calcular_promedio():
+    if len(notas) > 0:
+        promedio = sum(notas) / len(notas)
+        
+        if promedio >= 7:
+            estado = "Aprueba"
+        else:
+            estado = "Reprueba"
+        
+        resultado.config(text=f"Promedio: {round(promedio,2)}\n{estado}")
+    else:
+        resultado.config(text="No hay notas")
+
+ventana = tk.Tk()
+ventana.geometry("250x300")
+ventana.title("Notas")
+
+frame = tk.Frame(ventana, bg="yellow")
+frame.pack(fill="both", expand=True)
+
+label = tk.Label(frame, text="Ingrese sus notas",
+font=("Arial",12,"bold"), bg="yellow", fg="blue")
+label.pack()
+
+entry = tk.Entry(frame)
+entry.pack()
+
+btn_agregar = tk.Button(frame, text="Agregar", command=agregar_nota)
+btn_agregar.pack()
+
+btn_promedio = tk.Button(frame, text="Promedio", command=calcular_promedio)
+btn_promedio.pack()
+
+lista_label = tk.Label(frame, text="Notas: []", bg="yellow")
+lista_label.pack()
+
+resultado = tk.Label(frame, text="", bg="yellow")
+resultado.pack()
+
+ventana.mainloop()
+</pre>
+
+<!-- 🎥 VIDEO -->
+<h3>Video del ejercicio</h3>
+
+<iframe 
+width="640" 
+height="360" 
+src="https://drive.google.com/file/d/1HL9mlASMAoiFyUBls3u8kOirFp9L-qNC/preview"
+allow="autoplay">
+</iframe>
+<br>
+
+<a href="index.html" class="boton">Volver al menú</a>
+
+</div>
+
+</body>
+</html>
