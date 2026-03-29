@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tkinter</title>
+
+<style>
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e3c72;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>DEBER - TKINTER</h2>
+
+<p>
+Estos programas están desarrollados en Python utilizando la librería Tkinter para crear interfaces gráficas.
+El primer ejercicio permite ingresar nombre y edad para mostrar un saludo en consola.
+El segundo ejercicio es una calculadora básica con operaciones de suma, resta, multiplicación y división.
+</p>
+
+<!-- ================= EJERCICIO 1 ================= -->
+
+<h3>Ejercicio 1 - Saludo</h3>
+
+<pre>
+import tkinter as tk
+
+def saludar():
+    nombre = caja_nombre.get()
+    edad = caja_edad.get()
+    print("hola " + nombre + " tu edad es " + edad + " años")
+
+ventana = tk.Tk()
+ventana.geometry("250x300")
+ventana.title("Saludo")
+ventana.config(bg="lightblue")
+
+frame = tk.Frame(ventana, bg="lightblue")
+frame.pack(fill="both", expand=True)
+
+texto1 = tk.Label(frame, text="Ingrese su nombre:", bg="lightblue", fg="black")
+texto1.pack()
+
+caja_nombre = tk.Entry(frame, bg="white", fg="black")
+caja_nombre.pack()
+
+texto2 = tk.Label(frame, text="Ingrese su edad:", bg="lightblue", fg="black")
+texto2.pack()
+
+caja_edad = tk.Entry(frame, bg="white", fg="black")
+caja_edad.pack()
+
+button = tk.Button(frame, text="Saludar", command=saludar, bg="blue", fg="white")
+button.pack(pady=10)
+
+ventana.mainloop()
+</pre>
+
+
+<!-- ================= EJERCICIO 2 ================= -->
+
+<h3>Ejercicio 2 - Calculadora</h3>
+
+<pre>
+import tkinter as tk
+
+def sumar():
+    num1 = caja1.get()
+    num2 = caja2.get()
+    resultado = int(num1) + int(num2)
+    resultado_label.config(text="Resultado: " + str(resultado))
+
+def restar():
+    num1 = caja1.get()
+    num2 = caja2.get()
+    resultado = int(num1) - int(num2)
+    resultado_label.config(text="Resultado: " + str(resultado))
+
+def multiplicar():
+    num1 = caja1.get()
+    num2 = caja2.get()
+    resultado = int(num1) * int(num2)
+    resultado_label.config(text="Resultado: " + str(resultado))
+
+def dividir():
+    num1 = caja1.get()
+    num2 = caja2.get()
+    resultado = int(num1) / int(num2)
+    resultado_label.config(text="Resultado: " + str(round(resultado, 2)))
+
+ventana = tk.Tk()
+ventana.geometry("200x300")
+ventana.title("Calculadora")
+
+frame = tk.Frame(ventana, bg="blue")
+frame.pack(fill="both", expand=True)
+
+texto1 = tk.Label(frame, text="Ingrese un numero", bg="red", font=("Arial",12,"bold"), fg="black")
+texto1.pack()
+
+caja1 = tk.Entry(frame)
+caja1.pack()
+
+texto2 = tk.Label(frame, text="Ingrese otro numero", bg="red", font=("Arial",12,"bold"), fg="black")
+texto2.pack()
+
+caja2 = tk.Entry(frame)
+caja2.pack()
+
+boton1 = tk.Button(frame, text="Sumar", bg="red", command=sumar)
+boton1.pack()
+
+boton2 = tk.Button(frame, text="Restar", bg="red", command=restar)
+boton2.pack()
+
+boton3 = tk.Button(frame, text="Multiplicar", bg="red", command=multiplicar)
+boton3.pack()
+
+boton4 = tk.Button(frame, text="Dividir", bg="red", command=dividir)
+boton4.pack()
+
+resultado_label = tk.Label(frame, text="", bg="orange")
+resultado_label.pack()
+
+ventana.mainloop()
+</pre>
+
+<iframe 
+width="640" 
+height="360" 
+src="https://drive.google.com/file/d/1c_6FQ7bpP8B9gJ7Eggkcq_JUFBxNhAvD/preview"
+allow="autoplay">
+</iframe>
+
+<br>
+
+<a href="index.html" class="boton">Volver al menú</a>
+
+</div>
+
+</body>
+</html>
