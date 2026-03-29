@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora IMC</title>
+
+<style>
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e3c72;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>DEBER - CALCULADORA IMC (TKINTER)</h2>
+
+<p>
+Este programa está desarrollado en Python utilizando la librería Tkinter para crear una interfaz gráfica.
+Permite al usuario ingresar su peso y altura, y al presionar un botón calcula el Índice de Masa Corporal (IMC).
+El programa también clasifica el resultado en bajo peso, normal, sobrepeso u obesidad.
+</p>
+
+<h3>Código del programa</h3>
+
+<pre>
+import tkinter as tk
+from tkinter import messagebox
+
+# Función para calcular el IMC
+def calcular_imc():
+    try:
+        peso = float(entry_peso.get())
+        altura = float(entry_altura.get())
+
+        if altura <= 0:
+            messagebox.showerror("Error", "La altura debe ser mayor que 0")
+            return
+
+        imc = peso / (altura ** 2)
+
+        # Clasificación
+        if imc < 18.5:
+            estado = "Bajo peso"
+        elif imc < 25:
+            estado = "Normal"
+        elif imc < 30:
+            estado = "Sobrepeso"
+        else:
+            estado = "Obesidad"
+
+        resultado.set(f"IMC: {imc:.2f} - {estado}")
+
+    except ValueError:
+        messagebox.showerror("Error", "Ingrese valores válidos")
+
+# Crear ventana
+ventana = tk.Tk()
+ventana.title("Calculadora de IMC")
+ventana.geometry("300x250")
+ventana.configure(bg="lightblue")  # Fondo de la ventana
+
+# Etiquetas y entradas
+tk.Label(ventana, text="Peso (kg):", bg="lightblue", fg="black").pack()
+entry_peso = tk.Entry(ventana, bg="white", fg="black")
+entry_peso.pack()
+
+tk.Label(ventana, text="Altura (m):", bg="lightblue", fg="black").pack()
+entry_altura = tk.Entry(ventana, bg="white", fg="black")
+entry_altura.pack()
+
+# Botón
+tk.Button(
+    ventana,
+    text="Calcular IMC",
+    command=calcular_imc,
+    bg="blue",
+    fg="white"
+).pack(pady=10)
+
+# Resultado
+resultado = tk.StringVar()
+tk.Label(ventana, textvariable=resultado, bg="lightblue", fg="black").pack()
+
+# Ejecutar app
+ventana.mainloop()
+</pre>
+
+<h3>Video del ejercicio</h3>
+
+<!-- AQUÍ PUEDES PEGAR TU VIDEO -->
+
+<br>
+
+<a href="index.html" class="boton">Volver al menú</a>
+
+</div>
+
+</body>
+</html>
