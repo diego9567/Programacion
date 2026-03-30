@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Java - Calculadora</title>
+
+<style>
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e3c72;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>DEBER - JAVA (CALCULADORA CON MENÚ)</h2>
+
+<p>
+Este programa está desarrollado en Java y utiliza un menú de opciones para realizar operaciones matemáticas.
+El usuario ingresa dos números y luego puede elegir entre sumar, restar, multiplicar o dividir.
+El programa tine funciones y un bucle que se ejecuta en un ciclo hasta que el usuario decide salir.
+</p>
+
+<h3>Código del programa</h3>
+
+<pre>
+import java.util.Scanner;
+
+public class Main{
+
+    public static int sumar(int a, int b){
+        return a + b;
+    }
+
+    public static int resta(int a, int b){
+        return a - b;
+    }
+
+    public static int multiplicar(int a, int b){
+        return a * b;
+    }
+
+    public static double division(int a, int b){
+        if (b != 0){
+            return (double) a / b;
+        } else {
+            return 0;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el primer numero: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Ingrese el segundo numero: ");
+        int num2 = scanner.nextInt();
+
+        int opcion;
+
+        do{
+            System.out.println("1. Sumar");
+            System.out.println("2. Restar");
+            System.out.println("3. Multiplicar");
+            System.out.println("4. Division");
+            System.out.println("5. Salir");
+            System.out.print("Elija una opcion: ");
+
+            opcion = scanner.nextInt();
+
+            switch (opcion){
+                case 1:
+                    System.out.println("Suma: " + sumar(num1, num2));
+                    break;
+
+                case 2:
+                    System.out.println("Resta: " + resta(num1, num2));
+                    break;
+
+                case 3:
+                    System.out.println("Multiplicacion: " + multiplicar(num1, num2));
+                    break;
+
+                case 4:
+                    if (num2 != 0){
+                        System.out.println("Division: " + division(num1, num2));
+                    } else {
+                        System.out.println("No se puede dividir para 0");
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("Saliendo...");
+                    break;
+
+                default:
+                    System.out.println("Opcion invalida");
+            }
+
+        } while (opcion != 5);
+
+        System.out.println("Fin del programa");
+    }
+}
+</pre>
+
+
+<h3>Video del ejercicio</h3>
+<iframe 
+width="640" 
+height="360" 
+src="https://drive.google.com/file/d/1Wrc2vUypF3C2tOSmYA2ahfCJaMKntl3o/preview"
+allow="autoplay">
+</iframe>
+<br>
+
+<a href="index.html" class="boton">Volver al menú</a>
+
+</div>
+
+</body>
+</html>
