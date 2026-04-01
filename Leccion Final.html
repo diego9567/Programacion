@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Lección Final</title>
+
+<style>
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e3c72;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>LECCIÓN FINAL - PROYECTO DE INVENTARIO</h2>
+
+<p>
+En esta sección se explica la teoría utilizada en el desarrollo del proyecto de inventario con interfaz gráfica en Python.
+</p>
+
+<h3>📌 Variables</h3>
+<p>
+Las variables son espacios en memoria donde se almacenan datos que pueden cambiar durante la ejecución del programa.
+Se utilizan para guardar información como el nombre del producto y la cantidad.
+</p>
+
+<pre>
+producto = "sal"
+cantidad = 5
+</pre>
+
+<h3>📌 Diccionarios</h3>
+<p>
+Un diccionario es una estructura de datos que almacena información en pares clave-valor.
+Se utiliza para guardar el inventario.
+</p>
+
+<pre>
+inventario = {"sal": 5}
+</pre>
+
+<h3>📌 Funciones</h3>
+<p>
+Las funciones son bloques de código reutilizables que realizan tareas específicas.
+</p>
+
+<pre>
+def agregar():
+    print("Agregando producto")
+</pre>
+
+<h3>📌 Condicionales</h3>
+<p>
+Permiten tomar decisiones en el programa dependiendo de una condición.
+</p>
+
+<pre>
+if producto in inventario:
+    print("El producto ya existe")
+</pre>
+
+<h3>📌 Estructuras de repetición (for)</h3>
+<p>
+Permiten repetir un bloque de código varias veces.
+</p>
+
+<pre>
+for producto, cantidad in inventario.items():
+    print(producto, cantidad)
+</pre>
+
+<h3>📌 Entrada de datos</h3>
+<p>
+Permite que el usuario ingrese información al programa mediante campos de texto.
+</p>
+
+<pre>
+producto = entry_producto.get()
+</pre>
+
+<h3>📌 Interfaz gráfica (Tkinter)</h3>
+<p>
+Permite interactuar con el programa mediante ventanas, botones y campos de texto.
+</p>
+
+<pre>
+ventana = tk.Tk()
+</pre>
+
+<h3>📌 Eventos</h3>
+<p>
+Son acciones que ocurren cuando el usuario interactúa con la interfaz.
+</p>
+
+<pre>
+tk.Button(ventana, text="Agregar", command=agregar)
+</pre>
+
+<h3>📌 Actualización de interfaz</h3>
+<p>
+Permite actualizar la información mostrada en pantalla en tiempo real.
+</p>
+
+<pre>
+label_lista.config(text="Inventario actualizado")
+</pre>
+
+<h3> Conclusión</h3>
+<p>
+En este proyecto se aplicaron conceptos fundamentales como variables, funciones, condicionales, diccionarios y estructuras de repetición, junto con una interfaz gráfica en Tkinter.
+Esto permitió desarrollar una aplicación funcional para el control de inventario.
+</p>
+
+
+<h3>Video de la explicación</h3>
+<iframe 
+
+width="640" 
+height="360" 
+src="https://drive.google.com/file/d/1rf1bHJiwcdL9mPBjvul2KzRKl6swKNV0/preview"
+allow="autoplay">
+</iframe>
+
+<br>
+
+<a href="index.html" class="boton">Volver al menú</a>
+
+</div>
+
+</body>
+</html>
