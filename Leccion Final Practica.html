@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Aplicación de Inventario</title>
+
+<style>
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+    overflow-x:auto;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e3c72;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>PROYECTO FINAL - APLICACIÓN DE INVENTARIO</h2>
+
+<p>
+Este programa está desarrollado en Python utilizando la librería Tkinter.
+Permite gestionar un inventario de productos, agregando y vendiendo artículos.
+El sistema valida datos, actualiza el stock en tiempo real y muestra la información en una interfaz gráfica moderna.
+</p>
+
+<h3>Código del programa</h3>
+
+<pre>
+import tkinter as tk
+from tkinter import messagebox
+
+inventario = {}
+
+def limpiar_campos():
+    entry_producto.delete(0, tk.END)
+    entry_cantidad.delete(0, tk.END)
+    entry_producto.focus()
+
+def actualizar_lista():
+    texto = "📦 STOCK ACTUAL\n" + "─" * 20 + "\n"
+    for producto, cantidad in inventario.items():
+        texto += f"• {producto.capitalize()}: {cantidad}\n"
+    label_lista.config(text=texto)
+
+def validar_entrada():
+    try:
+        prod = entry_producto.get().strip()
+        cant = int(entry_cantidad.get())
+        if not prod: raise ValueError("Nombre vacío")
+        if cant < 0: raise ValueError("Cantidad negativa")
+        return prod, cant
+    except ValueError:
+        messagebox.showerror("Error", "Introduce un nombre válido y una cantidad numérica.")
+        return None, None
+
+def agregar():
+    prod, cant = validar_entrada()
+    if prod:
+        inventario[prod] = inventario.get(prod, 0) + cant
+        actualizar_lista()
+        limpiar_campos()
+
+def vender():
+    prod, cant = validar_entrada()
+    if prod:
+        if prod in inventario and inventario[prod] >= cant:
+            inventario[prod] -= cant
+            actualizar_lista()
+            limpiar_campos()
+        else:
+            messagebox.showwarning("Stock Insuficiente", f"No hay suficiente stock de {prod}")
+
+ventana = tk.Tk()
+ventana.title("Control de Inventario Pro")
+ventana.geometry("350x500")
+ventana.config(bg="#1e1e1e")
+
+estilo_label = {"bg": "#1e1e1e", "fg": "#ecf0f1", "font": ("Segoe UI", 10)}
+estilo_entry = {"font": ("Segoe UI", 10), "bd": 0, "highlightthickness": 1}
+
+tk.Label(ventana, text="GESTIÓN DE INVENTARIO", font=("Segoe UI", 14, "bold"),
+bg="#2c3e50", fg="white", pady=15).pack(fill="x")
+
+frame_form = tk.Frame(ventana, bg="#1e1e1e", padx=20, pady=20)
+frame_form.pack()
+
+tk.Label(frame_form, text="Producto:", **estilo_label).grid(row=0, column=0, sticky="w", pady=5)
+entry_producto = tk.Entry(frame_form, **estilo_entry)
+entry_producto.grid(row=0, column=1, pady=5, padx=10)
+
+tk.Label(frame_form, text="Cantidad:", **estilo_label).grid(row=1, column=0, sticky="w", pady=5)
+entry_cantidad = tk.Entry(frame_form, **estilo_entry)
+entry_cantidad.grid(row=1, column=1, pady=5, padx=10)
+
+btn_frame = tk.Frame(ventana, bg="#1e1e1e")
+btn_frame.pack(pady=10)
+
+tk.Button(btn_frame, text="✚ AGREGAR", bg="green", fg="white", width=12,
+relief="flat", command=agregar).pack(side="left", padx=5)
+
+tk.Button(btn_frame, text="✘ VENDER", bg="red", fg="white", width=12,
+relief="flat", command=vender).pack(side="left", padx=5)
+
+label_lista = tk.Label(ventana, text="📦 STOCK ACTUAL\n" + "─" * 20,
+**estilo_label, justify="left", anchor="n")
+label_lista.pack(pady=20, fill="both", expand=True)
+
+ventana.mainloop()
+</pre>
+
+<br>
+
+<a href="index.html" class="boton">Volver al menú</a>
+
+</div>
+
+</body>
+</html>
