@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Lección Final</title>
+
+<style>
+body{
+    background-color:#1e3c72;
+    color:white;
+    font-family: Arial;
+    padding:40px;
+}
+
+.caja{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+}
+
+pre{
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:5px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1e3c72;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h2>LECCIÓN FINAL TEORICO - MINI INVENTARIO</h2>
+
+<p>
+Este programa está desarrollado en Python utilizando Tkinter.
+Permite ingresar un producto mediante una interfaz gráfica y mostrar un mensaje cuando se agrega correctamente.
+También valida que el campo no esté vacío.
+</p>
+
+<h3>Código del programa</h3>
+
+<pre>
+import tkinter as tk
+from tkinter import messagebox
+
+def agregar_prodcuto():
+    producto = entry_producto.get()
+
+    if producto == "":
+        messagebox.showerror("Error", "Ingrese un producto")
+    else:
+        label_resultado.config(text=f"Producto agregado: {producto}")
+
+ventana = tk.Tk()
+ventana.title("Mini inventario")
+ventana.geometry("250x200")
+
+tk.Label(ventana, text="Ingrese un producto").pack()
+
+entry_producto = tk.Entry(ventana)
+entry_producto.pack()
+
+tk.Button(ventana, text="Agregar", command=agregar_prodcuto).pack()
+
+label_resultado = tk.Label(ventana, text="")
+label_resultado.pack()
+
+ventana.mainloop()
+</pre>
+
+
+<h3>Video del ejercicio</h3>
+
+<iframe 
+width="640" 
+height="360" 
+src="https://drive.google.com/file/d/1Fx3VYppW-xbO0kw_oz9y1Sq6gr8nAYxx/preview"
+allow="autoplay">
+</iframe>
+
+<br>
+
+<a href="index.html" class="boton">Volver al menú</a>
+
+</div>
+
+</body>
+</html>
